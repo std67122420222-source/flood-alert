@@ -31,6 +31,11 @@ from .warning_service import (
 main = Blueprint("main", __name__)
 
 
+@main.route("/healthz")
+def healthz():
+    return jsonify({"ok": True, "service": "flood-alert"})
+
+
 def get_latest_weather_by_province(areas):
     weather_by_area = {}
 

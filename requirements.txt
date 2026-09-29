@@ -5,3 +5,4 @@ Flask-Bcrypt
 requests
 python-dotenv
 APScheduler
+gunicorn==23.0.0

@@ -83,3 +83,17 @@ app/
    ├─ login.html
    └─ register.html
 ```
+
+## Deploy on Render
+
+A ready-to-deploy `render.yaml` is included. Use a Render Web Service with Gunicorn:
+
+```text
+Build Command: pip install -r requirements.txt
+Start Command: gunicorn --bind 0.0.0.0:$PORT --workers 1 --timeout 120 run:app
+Health Check: /healthz
+```
+
+Required environment variables: `SECRET_KEY`, `TMD_ACCESS_TOKEN`. `TMD_WARNING_URL` can use the project default/configured value.
+
+See `RENDER_DEPLOY.md` for the step-by-step guide.
